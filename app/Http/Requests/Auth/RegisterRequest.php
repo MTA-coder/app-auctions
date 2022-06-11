@@ -6,6 +6,8 @@ use App\Enums\RoleEnum;
 use App\Traits\FormRequestTrait;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use BenSampo\Enum\Rules\EnumValue;
+
 
 class RegisterRequest extends FormRequest
 {

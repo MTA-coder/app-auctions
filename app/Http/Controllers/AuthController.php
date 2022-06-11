@@ -35,7 +35,7 @@ class AuthController extends Controller
     {
         if (Auth::attempt(['email' => $data['email'], 'password' => $data['password']])) {
             $user = Auth::user();
-            $user = $this->user->createToken('auctions', $user->role);
+            $user['token'] = $this->user->createToken('auctions', [$user->role]);
             return ResponseHelper::operationSuccess($user);
         }
         return ResponseHelper::authenticationFail();

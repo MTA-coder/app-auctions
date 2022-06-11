@@ -24,7 +24,7 @@ return new class extends Migration
             $table->timestamp('phone_verified_at')->nullable();
             $table->string('shipping_address');
             $table->string('password');
-            $table->enum('roles', RoleEnum::getValues());
+            $table->enum('role', RoleEnum::getValues());
             $table->rememberToken();
             $table->timestamps();
         });
