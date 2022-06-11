@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('price');
             $table->integer('increment_bids');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

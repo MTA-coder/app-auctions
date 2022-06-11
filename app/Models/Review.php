@@ -9,17 +9,17 @@ class Review extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['rate', 'review', 'price', 'increment_bids'];
+    protected $fillable = ['rate', 'review'];
 
     protected $hidden = ['updated_at', 'deleted_at'];
 
-    public function category()
+    public function user()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function tag()
+    public function product()
     {
-        return $this->belongsTo(Tag::class);
+        return $this->belongsTo(Product::class);
     }
 }
