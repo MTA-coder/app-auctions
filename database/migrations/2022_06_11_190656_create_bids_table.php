@@ -18,6 +18,7 @@ return new class extends Migration
             $table->time('remaining_time');
             $table->float('current_price');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
