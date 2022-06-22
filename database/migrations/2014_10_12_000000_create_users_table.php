@@ -21,10 +21,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('phone');
-            $table->timestamp('phone_verified_at')->nullable();
-            $table->string('shipping_address');
             $table->string('password');
             $table->enum('role', RoleEnum::getValues());
+            $table->float('wallet')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

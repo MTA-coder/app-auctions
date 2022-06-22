@@ -14,7 +14,7 @@ class Category extends Model
 
     protected $hidden = ['updated_at', 'deleted_at'];
 
-    public function products()
+    public function auctions()
     {
         return $this->hasMany(Product::class);
     }

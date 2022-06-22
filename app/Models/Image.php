@@ -10,11 +10,11 @@ class Image extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['url', 'product_id'];
+    protected $fillable = ['url', 'auction_id'];
 
     protected $hidden = ['updated_at', 'deleted_at'];
 
-    public function product()
+    public function auction()
     {
         return $this->belongsTo(Product::class);
     }

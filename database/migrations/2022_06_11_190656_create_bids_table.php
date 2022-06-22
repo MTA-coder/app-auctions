@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('bids', function (Blueprint $table) {
             $table->id();
-            $table->time('remaining_time');
-            $table->float('current_price');
+            $table->float('bid_price');
             $table->timestamps();
             $table->softDeletes();
         });

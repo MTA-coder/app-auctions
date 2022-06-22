@@ -10,12 +10,12 @@ class State extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'country_id'];
 
     protected $hidden = ['updated_at', 'deleted_at'];
 
-    public function address()
+    public function cities()
     {
-        return $this->hasMany(Address::class);
+        return $this->hasMany(City::class);
     }
 }

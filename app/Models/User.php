@@ -18,10 +18,9 @@ class User extends Authenticatable
         'email',
         'email_verified_at',
         'phone',
-        'phone_verified_at',
-        'shipping_address',
         'password',
-        'role'
+        'role',
+        'wallet'
     ];
 
     protected $hidden = [
@@ -31,8 +30,7 @@ class User extends Authenticatable
     ];
 
     protected $casts = [
-        'email_verified_at' => 'datetime',
-        'phone_verified_at' => 'datetime',
+        'email_verified_at' => 'datetime'
     ];
 
     public function setPasswordAttribute($value)

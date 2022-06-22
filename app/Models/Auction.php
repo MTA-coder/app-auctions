@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Product extends Model
+class Auction extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['name', 'description', 'price', 'increment_bids', 'category_id', 'tag_id'];
+    protected $fillable = ['name', 'description', 'price', 'minimum_bid', 'category_id', 'tag_id', 'end_time'];
 
     protected $hidden = ['updated_at', 'deleted_at'];
 

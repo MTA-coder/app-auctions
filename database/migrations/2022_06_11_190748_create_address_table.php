@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->string('street_name');
-            $table->string('street_number');
+            $table->string('post_code');
+            $table->text('street');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -18,7 +18,7 @@ class Review extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function product()
+    public function auction()
     {
         return $this->belongsTo(Product::class);
     }

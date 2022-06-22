@@ -10,7 +10,7 @@ class City extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'state_id'];
 
     protected $hidden = ['updated_at', 'deleted_at'];
 

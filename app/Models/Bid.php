@@ -10,7 +10,7 @@ class Bid extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['remaining_time', 'current_price', 'user_id', 'product_id'];
+    protected $fillable = ['bid_price'];
 
     protected $hidden = ['updated_at', 'deleted_at'];
 
@@ -19,7 +19,7 @@ class Bid extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function product()
+    public function auction()
     {
         return $this->belongsTo(Product::class);
     }

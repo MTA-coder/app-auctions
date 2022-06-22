@@ -14,40 +14,48 @@ return new class extends Migration
     public function up()
     {
 
-        Schema::table('favorites', function (Blueprint $table) {
+        Schema::table('wishes', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained('users', 'id');
-            $table->foreignId('product_id')->constrained('products', 'id');
+            $table->foreignId('auction_id')->constrained('auctions', 'id');
         });
 
         Schema::table('reviews', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained('users', 'id');
-            $table->foreignId('product_id')->constrained('products', 'id');
+            $table->foreignId('auction_id')->constrained('auctions', 'id');
         });
 
         Schema::table('images', function (Blueprint $table) {
-            $table->foreignId('product_id')->constrained('products', 'id');
+            $table->foreignId('auction_id')->constrained('auctions', 'id');
         });
 
-        Schema::table('products', function (Blueprint $table) {
+        Schema::table('auctions', function (Blueprint $table) {
             $table->foreignId('category_id')->constrained('categories', 'id');
             $table->foreignId('tag_id')->constrained('tags', 'id');
         });
 
         Schema::table('bids', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained('users', 'id');
-            $table->foreignId('product_id')->constrained('products', 'id');
-        });
-
-        Schema::table('payments', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained('users', 'id');
-            $table->foreignId('bid_id')->constrained('bids', 'id');
+            $table->foreignId('auction_id')->constrained('auctions', 'id');
         });
 
         Schema::table('addresses', function (Blueprint $table) {
             $table->foreignId('city_id')->constrained('cities', 'id');
-            $table->foreignId('country_id')->constrained('countries', 'id');
-            $table->foreignId('state_id')->constrained('states', 'id');
+            $table->foreignId('user_id')->constrained('users', 'id');
         });
+
+        Schema::table(
+            'states',
+            function (Blueprint $table) {
+                $table->foreignId('country_id')->constrained('countries', 'id');
+            }
+        );
+
+        Schema::table(
+            'cities',
+            function (Blueprint $table) {
+                $table->foreignId('state_id')->constrained('states', 'id');
+            }
+        );
     }
 
     /**
