@@ -31,6 +31,7 @@ return new class extends Migration
         Schema::table('auctions', function (Blueprint $table) {
             $table->foreignId('category_id')->constrained('categories', 'id');
             $table->foreignId('tag_id')->constrained('tags', 'id');
+            $table->foreignId('user_id')->constrained('users', 'id');
         });
 
         Schema::table('bids', function (Blueprint $table) {

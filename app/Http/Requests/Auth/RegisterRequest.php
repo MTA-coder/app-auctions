@@ -20,7 +20,6 @@ class RegisterRequest extends FormRequest
             'last_name' => ['required', 'string'],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'phone' => ['required', 'string'],
-            'shipping_address' => ['required', 'string'],
             'role' => ['required', 'string', new EnumValue(RoleEnum::class)],
             'password' => ['required', 'string'],
             'confirm_password' => ['required', 'string', 'same:password'],
