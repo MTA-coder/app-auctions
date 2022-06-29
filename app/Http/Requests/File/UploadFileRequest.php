@@ -12,7 +12,7 @@ class UploadFileRequest extends FormRequest
     public function rules()
     {
         return [
-            'images' => ['required', 'mimes:png,jpg,svg,jpeg']
+            'image' => ['required', 'mimes:png,jpg,svg,jpeg']
         ];
     }
 }

@@ -12,12 +12,10 @@ class FileController extends Controller
     {
         $request->validated();
         $file = $request->file('image');
-        $folder = $request->get('folder');
         $fileName = time() . '.' . $file->getClientOriginalExtension();
-        $fullPath = $folder . '/' . $fileName;
         try {
-            Storage::disk('public')->put($fullPath, file_get_contents($file));
-            return ResponseHelper::operationSuccess($fullPath);
+            Storage::disk('public')->put($fileName, file_get_contents($file));
+            return ResponseHelper::operationSuccess($fileName);
         } catch (\Exception $th) {
             return ResponseHelper::operationFail($th->getMessage());
         }
