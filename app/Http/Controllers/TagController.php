@@ -15,6 +15,13 @@ class TagController extends Controller
         $this->tag = $tag;
     }
 
+    public function get()
+    {
+        $data = $this->tag->get();
+        return ResponseHelper::select($data);
+    }
+
+
     public function create(CreateTagRequest $request)
     {
         $data = $request->validated();
